@@ -1,34 +1,28 @@
-const books = ['Первый учитель', 'Гарри Поттер', 'Ведьмак', 'Шерлок Холмс'];
+function showAnswer(id) {
+    const answer = document.getElementById("answer" + id);
+    answer.style.display = "block";
+}
+function hideAnswer(id) {
+    const answer = document.getElementById("answer" + id);
+    answer.style.display = "none";
+}
 
-function booksList () {
-    const uBooks = []
-    const restBooks = []
+window.addEventListener("DOMContentLoaded", function() {
+    let i;
+    const showButtons = document.getElementsByClassName("show-answer");
+    const hideButtons = document.getElementsByClassName("hide-answer");
 
-    for (let i = 0; i < books.length; i++) {
-        if (books[i].includes('м')) {
-            uBooks.push(books[i]);
-        } else {
-            restBooks.push(books[i])
-        }
+    for (i = 0; i < showButtons.length; i++) {
+        showButtons[i].addEventListener("click", function() {
+            let id = this.getAttribute("data-id");
+            showAnswer(id);
+        });
     }
-    return {uBooks, restBooks};
-}
-const {uBooks, restBooks} = booksList(books)
 
-console.log('Есть буква "м":', uBooks);
-console.log('Остальные книги:', restBooks);
-
-function printDelimiter() {
-    console.log('-'.repeat(100))
-}
-printDelimiter()
-
-function getAverage(...nums){
-    console.log(nums)
-    let sum = nums.reduce((a, b) => a+b, 0)
-    let average;
-    average = sum / nums.length;
-    return average;
-}
-console.log(getAverage(1, 10, 20, 30, 40, 50));
-console.log(getAverage(99, 255, 488));
+    for (i = 0; i < hideButtons.length; i++) {
+        hideButtons[i].addEventListener("click", function() {
+            let id = this.getAttribute("data-id");
+            hideAnswer(id);
+        });
+    }
+});

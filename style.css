@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: cornflowerblue;
+    display: flex;
+    padding: 100px;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.puzzle {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: white;
+}
+h3 {
+    margin-top: 0;
+    color: black;
+}
+p {
+    margin-bottom: 10px;
+}
+button {
+    background-color: limegreen;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+button:hover {
+    background-color: limegreen;
+}
+.answer {
+    display: none;
+    font-weight: bold;
+}
